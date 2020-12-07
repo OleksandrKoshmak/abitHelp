@@ -1,12 +1,26 @@
 package models;
 
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "subject")
 public class Subject {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "minScore")
     private int minScore;
-   private List <Specialty> specialtyList;
+
+    @ManyToMany(fetch = FetchType.LAZY,mappedBy="subjectList")
+    private List<Specialty> specialtyList = new ArrayList<>();
+
+
+    public Subject() {
+    }
 
     public Subject(int id, String name, int minScore) {
         this.id = id;
@@ -38,11 +52,11 @@ public class Subject {
         this.minScore = minScore;
     }
 
-    public List<Specialty> getSpecialtyList() {
-        return specialtyList;
-    }
+  public List<Specialty> getSpecialtyList() {
+       return specialtyList;
+   }
 
-    public void setSpecialtyList(List<Specialty> specialtyList) {
-        this.specialtyList = specialtyList;
-    }
+   public void setSpecialtyList(List<Specialty> specialtyList) {
+       this.specialtyList = specialtyList;
+   }
 }

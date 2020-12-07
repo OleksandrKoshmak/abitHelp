@@ -1,17 +1,32 @@
 package models;
 
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
-
+@Entity
+@Table(name = "university")
 public class University {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @Column(name = "name")
     private String name;
+    @Column(name = "linkToWebsite")
     private String linkToWebsite;
+    @Column(name = "phoneNumber")
     private String phoneNumber;
+    @Column(name = "email")
     private String email;
     private StudyForm studyForm;
     private boolean availableBudget;
     private boolean availableAccommodation;
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "university_specialty", joinColumns = { @JoinColumn(name = "university_id") }, inverseJoinColumns = { @JoinColumn(name = "specialty_id") })
+    private List<Specialty> specialtyList = new ArrayList<>();
+
+    public University() {
+    }
 
     public int getId() {
         return id;
@@ -85,6 +100,5 @@ public class University {
         this.specialtyList = specialtyList;
     }
 
-    private List<Specialty> specialtyList;
 
 }
