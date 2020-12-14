@@ -31,6 +31,11 @@ public class Specialty {
     public Specialty() {
     }
 
+    public Specialty(int id, int specialtyNumber, String name) {
+        this.id = id;
+        this.specialtyNumber = specialtyNumber;
+        this.name = name;
+    }
 
     public int getId() {
         return id;

@@ -28,6 +28,18 @@ public class University {
     public University() {
     }
 
+    public University(int id, String name, String linkToWebsite, String phoneNumber, String email, StudyForm studyForm, boolean availableBudget, boolean availableAccommodation, List<Specialty> specialtyList) {
+        this.id = id;
+        this.name = name;
+        this.linkToWebsite = linkToWebsite;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+        this.studyForm = studyForm;
+        this.availableBudget = availableBudget;
+        this.availableAccommodation = availableAccommodation;
+        this.specialtyList = specialtyList;
+    }
+
     public int getId() {
         return id;
     }
