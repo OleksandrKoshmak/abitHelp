@@ -112,5 +112,12 @@ public class University {
         this.specialtyList = specialtyList;
     }
 
-
+    @Override
+    public String toString() {
+        return "University{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
 }

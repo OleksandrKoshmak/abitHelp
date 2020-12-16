@@ -77,4 +77,12 @@ public class Specialty {
         this.subjectList = subjectList;
     }
 
+    @Override
+    public String toString() {
+        return "Specialty{" +
+                "id=" + id +
+                ", specialtyNumber=" + specialtyNumber +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

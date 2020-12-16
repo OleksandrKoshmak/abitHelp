@@ -1,7 +1,7 @@
 package services;
 
+import dao.UniversityDaoImpl;
 import dao.UniversityDao;
-import dao.UniversityDaoInterface;
 import models.Specialty;
 import models.StudyForm;
 import models.Subject;
@@ -14,7 +14,7 @@ import java.util.List;
 
 public class UniversityService {
     public List<University> logicUniversityList(int specialityNumber, int zno1, int zno2, int zno3, boolean budgetForm, boolean accommodation, StudyForm studyForm) {
-        UniversityDaoInterface universityDaoInterface = new UniversityDao();
+        UniversityDao universityDao = new UniversityDaoImpl();
         List<University> universityList = returnList();
         List<University> result = new ArrayList<>();
         for (University university : universityList) {
