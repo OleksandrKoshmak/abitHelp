@@ -21,7 +21,7 @@ public class University {
     private StudyForm studyForm;
     private boolean availableBudget;
     private boolean availableAccommodation;
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinTable(name = "university_specialty", joinColumns = { @JoinColumn(name = "university_id") }, inverseJoinColumns = { @JoinColumn(name = "specialty_id") })
     private List<Specialty> specialtyList = new ArrayList<>();
 

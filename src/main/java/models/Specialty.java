@@ -22,7 +22,7 @@ public class Specialty {
     @ManyToMany(fetch = FetchType.LAZY,mappedBy="specialtyList")
     private List<University> universityList;
 
-    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "specialty_subject", joinColumns = { @JoinColumn(name = "specialty_id")},
             inverseJoinColumns = { @JoinColumn(name = "subject_id", referencedColumnName = "id") })
     private List<Subject> subjectList = new ArrayList<>();

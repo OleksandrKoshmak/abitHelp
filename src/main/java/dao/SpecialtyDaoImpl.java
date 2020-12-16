@@ -58,7 +58,7 @@ public class SpecialtyDaoImpl implements SpecialtyDao {
     }
 
     @Override
-    public List getlAllSpecialty() {
+    public List getAllSpecialty() {
         List specialtyList = null;
         Transaction tx1 = null;
         try (Session session = HibernateUtil.getSessionFactory().getCurrentSession()) {

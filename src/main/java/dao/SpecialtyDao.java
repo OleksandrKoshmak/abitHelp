@@ -9,5 +9,5 @@ public interface SpecialtyDao {
     Specialty readSpecialty(int id);
     void updateSpecialty(Specialty specialty);
     void deleteSpecialty(Specialty specialty);
-    List getlAllSpecialty ();
+    List getAllSpecialty ();
 }
