@@ -1,0 +1,69 @@
+.mark {
+    padding-bottom: 5px;
+    margin:  auto; 
+    width: 500px;
+    color: #d0eff2;
+    
+  }
+.mark label {
+    display: block;
+    float: left;
+    width: 100px;
+    height: 15px;
+  }
+.calculate{
+  margin-left: 40px;
+  padding-bottom: 30px;
+  padding-top: 30px;
+}
+#calculate{
+  margin-top: 25px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
+  background-color: #F2A007;
+  color: #734002;
+  text-decoration: none;
+  padding: .5em 2em;
+  outline: none;
+  border-width: 2px 0;
+  border-style: solid none;
+  border-color: #FDBE33 #000 #D77206;
+  border-radius: 6px;
+  background: linear-gradient(#F3AE0F, #E38916) #E38916;
+  transition: 0.2s;
+}
+.select select{ 
+  background-color: #f2a007;
+  color: #734002;
+  border: 0 solid transparent;
+  border-radius: 4px;
+  border-color: #f2a007 transparent transparent transparent;
+  width: 200px;
+  height: 60px;
+  margin-right: 10px;
+
+}
+
+.choose {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.choose label{
+  margin-right: 80px;
+}
+
+.select {
+  margin-left: 1em;
+  padding: .5em;
+  margin-bottom: .5em;
+}
+.to{
+  
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  
+}
