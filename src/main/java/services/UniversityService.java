@@ -47,7 +47,7 @@ public class UniversityService {
         if (math != null && math.getMinScore() <= znoResult.get(math.getName())) {
             subject2 = true;
         }
-        if (third.getMinScore() <= znoResult.get(third.getName())) {
+        if (znoResult.get(third.getName()) != null && third.getMinScore() <= znoResult.get(third.getName())) {
             subject3 = true;
         }
 
@@ -59,9 +59,9 @@ public class UniversityService {
 
     public List<University> returnList() {
         University university = new University(1, "DUIT", "www.duit.com", "09111111", "doit.@gmail.com", StudyForm.FULlTIME_FORM, true, true, null);
-        Subject subject1 = new Subject(1, "Ukrainian", 130);
-        Subject subject2 = new Subject(2, "Math", 120);
-        Subject subject3 = new Subject(3, "Third", 120);
+        Subject subject1 = new Subject(1, "Українська мова", 130);
+        Subject subject2 = new Subject(2, "Математика", 120);
+        Subject subject3 = new Subject(3, "Географія", 120);
         Specialty specialty = new Specialty(1, 111, "Law");
         specialty.setSubjectList(Arrays.asList(subject1, subject2, subject3));
         university.setSpecialtyList(Collections.singletonList(specialty));

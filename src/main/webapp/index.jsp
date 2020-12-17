@@ -66,7 +66,7 @@
                     <p><div class="select"><select required name="Предмет ЗНО 1:">
                     <option >Виберіть предмет</option>
                     <option value="Українська мова">Українська мова</option>
-                    <input name="zno1" type="text"  placeholder="Введіть ваш бал ЗНО"/>
+                    <input name="zno1" type="number" min="100" max="200" placeholder="Введіть ваш бал ЗНО"/>
 
                 </select></div> </p>
                 </div>
@@ -76,7 +76,7 @@
                     <option >Виберіть предмет</option>
                     <option value="Математика">Математика</option>
                     <option value="Історія України">Історія України</option>
-                    <input name="zno2" type="text"  placeholder="Введіть ваш бал ЗНО">
+                    <input name="zno2" type="number"  min="100" max="200"  placeholder="Введіть ваш бал ЗНО">
                 </select></div> </p>
                 </div>
                 <div class="choose">
@@ -88,7 +88,7 @@
                     <option value="Географія">Географія</option>
                     <option value="Фізика">Фізика</option>
                     <option value="Хімія">Хімія</option>
-                    <input name="zno3" type="text"  placeholder="Введіть ваш бал ЗНО">
+                    <input name="zno3" type="number"  min="100" max="200" placeholder="Введіть ваш бал ЗНО">
                 </select></div> </p></div>
 
 
@@ -118,7 +118,7 @@
                 </div>
                 <div class="choose" style="justify-content:right">
                     <label style="margin-right: 235px;"> Оберіть спеціальність:</label>
-                    <input type="text" name ="specialtyNumber" placeholder="Введіть номер ">
+                    <input type="number" min="100" max="200" name ="specialtyNumber" placeholder="Введіть номер ">
                 </div>
                 <button style="padding-top: 10px;padding-bottom: 10px;margin-bottom: 20px;text-align: center;font-size: 20px;"type="submit2" id="calculate">Знайти</button>
             </form>
