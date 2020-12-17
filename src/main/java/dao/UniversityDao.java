@@ -9,5 +9,5 @@ public interface UniversityDao {
         University readUniversity(int id);
         void updateUniversity(University university);
         void deleteUniversity(University university);
-        List getAllUniversity ();
+        List<University> getAllUniversity ();
 }

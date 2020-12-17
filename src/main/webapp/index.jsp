@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Karina Khomyak
@@ -6,7 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ page isELIgnored ="false" %>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -17,6 +18,7 @@
     <link rel="stylesheet" type="text/css" href="/css/reset.css">
     <link rel="stylesheet" type="text/css" href="/css/styles.css">
     <link rel="stylesheet" type="text/css" href="/css/styles_1.css">
+
 </head>
 <body>
 <header>
@@ -58,94 +60,100 @@
             <p>Обери параметри, які підходять саме тобі</p>
         </div>
         <div class="from-to">
-            <form name="from-to" method="post" action="input1.php">
+            <form name="from-to" method="get" action="universityServlet">
                 <div class="choose">
                     <label>Предмет ЗНО 1:</label>
-                    <p><div class="select"><select required name="subject_1">
+                    <p><div class="select"><select required name="Предмет ЗНО 1:">
                     <option >Виберіть предмет</option>
-                    <option value="s1">Українська мова</option>
-                    <option value="s2">Математика</option>
-                    <option value="s3">Іноземна мова</option>
-                    <option value="s4">Історія України</option>
-                    <option value="s5">Біологія</option>
-                    <option value="s6">Географія</option>
-                    <option value="s7">Фізика</option>
-                    <option value="s8">Хімія</option>
-                    <input type="text"  placeholder="Введіть ваш бал ЗНО">
+                    <option value="Українська мова">Українська мова</option>
+                    <input name="zno1" type="text"  placeholder="Введіть ваш бал ЗНО"/>
 
                 </select></div> </p>
                 </div>
                 <div class="choose">
                     <label>Предмет ЗНО 2:</label>
-                    <p><div class="select"><select required name="subject_2">
+                    <p><div class="select"><select required name="Предмет ЗНО 2:">
                     <option >Виберіть предмет</option>
-                    <option value="s1">Українська мова</option>
-                    <option value="s2">Математика</option>
-                    <option value="s3">Іноземна мова</option>
-                    <option value="s4">Історія України</option>
-                    <option value="s5">Біологія</option>
-                    <option value="s6">Географія</option>
-                    <option value="s7">Фізика</option>
-                    <option value="s8">Хімія</option>
-                    <input type="text"  placeholder="Введіть ваш бал ЗНО">
+                    <option value="Математика">Математика</option>
+                    <option value="Історія України">Історія України</option>
+                    <input name="zno2" type="text"  placeholder="Введіть ваш бал ЗНО">
                 </select></div> </p>
                 </div>
                 <div class="choose">
                     <label>Предмет ЗНО 3:</label>
-                    <p><div class="select"><select required name="subject_3">
+                    <p><div class="select"><select required name="Предмет ЗНО 3:">
                     <option >Виберіть предмет</option>
-                    <option value="s1">Українська мова</option>
-                    <option value="s2">Математика</option>
-                    <option value="s3">Іноземна мова</option>
-                    <option value="s4">Історія України</option>
-                    <option value="s5">Біологія</option>
-                    <option value="s6">Географія</option>
-                    <option value="s7">Фізика</option>
-                    <option value="s8">Хімія</option>
-                    <input type="text"  placeholder="Введіть ваш бал ЗНО">
+                    <option value="Іноземна мова">Іноземна мова</option>
+                    <option value="Біологія">Біологія</option>
+                    <option value="Географія">Географія</option>
+                    <option value="Фізика">Фізика</option>
+                    <option value="Хімія">Хімія</option>
+                    <input name="zno3" type="text"  placeholder="Введіть ваш бал ЗНО">
                 </select></div> </p></div>
 
 
                 <div class="to" style="margin: 0;">
                     <label style="margin-right: 70px;">Форма навчання:</label>
-                    <p><div class="select"><select required name="subject_1">
+                    <p><div class="select"><select required name="Форма навчання:">
                     <option >Виберіть варіант</option>
-                    <option value="v1">Денна</option>
-                    <option value="v2">Заочна</option>
+                    <option value="FULlTIME_FORM">Денна</option>
+                    <option value="DISTANCE_FORM">Заочна</option>
                 </select></div> </p>
                 </div>
                 <div class="to" style="margin: 0;">
                     <label style="margin-right: 70px;">Бюджет/контракт:</label>
-                    <p><div class="select" style="margin-left: 0px;"><select required name="subject_1">
+                    <p><div class="select" style="margin-left: 0px;"><select required name="Бюджет/контракт:">
                     <option >Виберіть варіант</option>
-                    <option value="v1">Бюджетна</option>
-                    <option value="v2">Контрактна</option>
+                    <option value="true">Бюджетна</option>
+                    <option value="false">Контрактна</option>
                 </select></div> </p>
                 </div>
                 <div class="to" style="margin: 0;">
                     <label>Наявність гуртожитку:</label>
-                    <p><div class="select" style="margin-left: 15px;"><select required name="subject_1">
+                    <p><div class="select" style="margin-left: 15px;"><select required name="Наявність гуртожитку:">
                     <option >Виберіть варіант</option>
-                    <option value="h1">Так</option>
-                    <option value="h2">Ні</option>
+                    <option value="true">Так</option>
+                    <option value="false">Ні</option>
                 </select></div> </p>
                 </div>
                 <div class="choose" style="justify-content:right">
                     <label style="margin-right: 235px;"> Оберіть спеціальність:</label>
-                    <input type="text"  placeholder="Введіть номер ">
+                    <input type="text" name ="specialtyNumber" placeholder="Введіть номер ">
                 </div>
                 <button style="padding-top: 10px;padding-bottom: 10px;margin-bottom: 20px;text-align: center;font-size: 20px;"type="submit2" id="calculate">Знайти</button>
             </form>
         </div>
     </div>
 </div>
-<div class="slider ">
-    <div class="slideshow-container">
-        <div class="mySlides fade">
-            <img src="images/student.jpg" alt="student">
-        </div>
-    </div>
 
+
+
+<div class="slider ">
+
+    <c:if test="${not empty universityList}" >
+    <div class="slideshow-container">
+        <table>
+            <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Сайт</th>
+            <th>телефон</th>
+            <th>Емейл</th>
+        </tr>
+            </thead>
+        <c:forEach items="${universityList}" var="university">
+      <tbody>
+            <tr>
+                <td>${university.getName()}</td>
+                <td>${university.getLinkToWebsite()}</td>
+                <td>${university.getPhoneNumber()}</td>
+                <td>${university.getEmail()}</td>
+            </tr>
+      </tbody>
+        </c:forEach>
+        </table>
+    </div>
+    </c:if>
 </div>
 </div>
 <div class="main-block" >
