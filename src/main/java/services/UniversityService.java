@@ -15,7 +15,7 @@ public class UniversityService {
         List<University> universityList = universityDao.getAllUniversity();
         List<University> universityResult = new ArrayList<>();
         for (University university : universityList) {
-            if (budgetForm == university.isAvailableBudget() && accommodation == university.isAvailableAccommodation() && studyForm.equals(university.getStudyForm())) {
+            if (checkIfAvaluable(budgetForm, university.isAvailableBudget()) && checkIfAvaluable(accommodation, university.isAvailableAccommodation()) && studyForm.equals(university.getStudyForm())) {
                 for (Specialty specialty : university.getSpecialtyList()) {
                     if (specialty.getSpecialityNumber() == specialityNumber) {
                         checkSpecialty(znoResult, universityResult, university, specialty);
@@ -56,17 +56,24 @@ public class UniversityService {
         }
 
     }
-
+    private boolean checkIfAvaluable(boolean userWishes, boolean availableInUniversity) {
+        if (availableInUniversity) {
+            return true;
+        }
+        return !userWishes;
+    }
     public List<University> returnList() {
         University university = new University(1, "DUIT", "www.duit.com", "09111111", "doit.@gmail.com", StudyForm.FULlTIME_FORM, true, true, null);
+        University universit2 = new University(2, "DUIT11111", "www.duit.com12341234124", "09111111", "doit.@gmail.com", StudyForm.FULlTIME_FORM, false, true, null);
         Subject subject1 = new Subject(1, "Українська мова", 130);
         Subject subject2 = new Subject(2, "Математика", 120);
         Subject subject3 = new Subject(3, "Географія", 120);
         Specialty specialty = new Specialty(1, 111, "Law");
         specialty.setSubjectList(Arrays.asList(subject1, subject2, subject3));
         university.setSpecialtyList(Collections.singletonList(specialty));
+        universit2.setSpecialtyList(Collections.singletonList(specialty));
 
-        return Collections.singletonList(university);
+        return Arrays.asList(universit2,university);
     }
 }
 
