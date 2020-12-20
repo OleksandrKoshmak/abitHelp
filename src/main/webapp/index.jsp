@@ -118,7 +118,7 @@
                 </div>
                 <div class="choose" style="justify-content:right">
                     <label style="margin-right: 235px;"> Оберіть спеціальність:</label>
-                    <input type="number" min="0" max="200" name ="specialtyNumber" placeholder="Введіть номер ">
+                    <input type="number" min="0" max="300" name ="specialtyNumber" placeholder="Введіть номер ">
                 </div>
                 <button style="padding-top: 10px;padding-bottom: 10px;margin-bottom: 20px;text-align: center;font-size: 20px;"type="submit2" id="calculate">Знайти</button>
             </form>
