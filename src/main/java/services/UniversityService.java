@@ -10,8 +10,9 @@ import models.University;
 import java.util.*;
 
 public class UniversityService {
+    UniversityDao universityDao = new UniversityDaoImpl();
+
     public List<University> logicUniversityList(int specialityNumber, Map<String, Integer> znoResult, boolean budgetForm, boolean accommodation, StudyForm studyForm) {
-        UniversityDao universityDao = new UniversityDaoImpl();
         List<University> universityList = universityDao.getAllUniversity();
         List<University> universityResult = new ArrayList<>();
         for (University university : universityList) {
@@ -62,19 +63,7 @@ public class UniversityService {
         }
         return !userWishes;
     }
-    public List<University> returnList() {
-        University university = new University(1, "DUIT", "www.duit.com", "09111111", "doit.@gmail.com", StudyForm.FULlTIME_FORM, true, true, null);
-        University universit2 = new University(2, "DUIT11111", "www.duit.com12341234124", "09111111", "doit.@gmail.com", StudyForm.FULlTIME_FORM, false, true, null);
-        Subject subject1 = new Subject(1, "Українська мова", 130);
-        Subject subject2 = new Subject(2, "Математика", 120);
-        Subject subject3 = new Subject(3, "Географія", 120);
-        Specialty specialty = new Specialty(1, 111, "Law");
-        specialty.setSubjectList(Arrays.asList(subject1, subject2, subject3));
-        university.setSpecialtyList(Collections.singletonList(specialty));
-        universit2.setSpecialtyList(Collections.singletonList(specialty));
 
-        return Arrays.asList(universit2,university);
-    }
 }
 
 
