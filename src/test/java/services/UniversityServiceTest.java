@@ -5,21 +5,16 @@ import models.Specialty;
 import models.StudyForm;
 import models.Subject;
 import models.University;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.Before;
+import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.mockito.junit.jupiter.MockitoExtension;
-
 import java.util.*;
-
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
-@ExtendWith(MockitoExtension.class)
-class UniversityServiceTest {
+public class UniversityServiceTest {
     @InjectMocks
     private UniversityService universityService;
 
@@ -27,9 +22,9 @@ class UniversityServiceTest {
     private UniversityDao universityDao;
 
 
-    @BeforeEach
-    void setUp() {
-        MockitoAnnotations.openMocks(this);
+    @Before
+    public void setUp()  {
+        MockitoAnnotations.initMocks(this);
 
         University university = new University(1, "DUIT", "www.duit.com", "09111111", "doit.@gmail.com", StudyForm.FULlTIME_FORM, true, true, null);
         University university2 = new University(2, "DUIT11111", "www.duit.com12341234124", "09111111", "doit.@gmail.com", StudyForm.FULlTIME_FORM, false, true, null);

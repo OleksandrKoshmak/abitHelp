@@ -72,7 +72,7 @@ public class UniversityDaoImpl implements UniversityDao {
             System.out.println("SOMETHING WENT WRONG, Can't get all models");
             tx1.rollback();
         }
-        return  universityList;
+        return universityList;
     }
 
     public UniversityDaoImpl() {
