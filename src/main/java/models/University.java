@@ -120,4 +120,33 @@ public class University {
                 ", email='" + email + '\'' +
                 '}';
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        University that = (University) o;
+
+        if (availableBudget != that.availableBudget) return false;
+        if (availableAccommodation != that.availableAccommodation) return false;
+        if (name != null ? !name.equals(that.name) : that.name != null) return false;
+        if (linkToWebsite != null ? !linkToWebsite.equals(that.linkToWebsite) : that.linkToWebsite != null)
+            return false;
+        if (phoneNumber != null ? !phoneNumber.equals(that.phoneNumber) : that.phoneNumber != null) return false;
+        if (email != null ? !email.equals(that.email) : that.email != null) return false;
+        return studyForm == that.studyForm;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (linkToWebsite != null ? linkToWebsite.hashCode() : 0);
+        result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
+        result = 31 * result + (email != null ? email.hashCode() : 0);
+        result = 31 * result + (studyForm != null ? studyForm.hashCode() : 0);
+        result = 31 * result + (availableBudget ? 1 : 0);
+        result = 31 * result + (availableAccommodation ? 1 : 0);
+        return result;
+    }
 }
