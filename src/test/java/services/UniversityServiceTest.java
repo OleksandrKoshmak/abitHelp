@@ -91,4 +91,19 @@ public class UniversityServiceTest {
         assertEquals(expectedUniversity,universities.get(0));
 
     }
+
+    @Test
+    public void testReturnedUniversityNotFound() {
+        //before
+        Map<String, Integer> marks = new HashMap<>();
+        marks.put("Українська мова", 120);
+        marks.put("Математика", 150);
+        marks.put("Географія", 150);
+
+        //when
+        List<University> universities = universityService.logicUniversityList(111, marks, true, true, StudyForm.FULlTIME_FORM);
+
+        //then
+        assertEquals(0, universities.size());
+    }
 }
